@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ECOMMERCE WEBSITE DOWNLOAD</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #010f1c;
+            font-family: "Jost", sans-serif;
+        }
+
+        body {
+            background: #efefef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100%;
+        }
+
+        section {
+            max-width: 95%;
+            max-height: 90vh;
+            width: 600px;
+            background: #fff;
+            padding: 40px;
+            overflow-y: auto;
+            border-top: 10px solid #0989ff;
+        }
+
+        .form div {
+            margin-top: 20px;
+        }
+
+        .form label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .form input {
+            border: 1px solid #e8e8e8;
+            padding: 8px 12px;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .form button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #0989ff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .form button:hover {
+            background-color: #0870d0;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>ECOMMERCE WEBSITE CODE</h1>
+        <div class="form">
+            <div>
+                <label>Full Name*</label>
+                <input type="text" name="name" placeholder="Full Name" class="name">
+            </div>
+            <div>
+                <label>Whatsapp Number(With ISD)*</label>
+                <input type="text" name="phone" placeholder="Ex- +919064973840" class="number">
+            </div>
+            <div>
+                <label>Email*</label>
+                <input type="email" name="email" placeholder="Email" class="email">
+            </div>
+            <button class="pay_with_upi">Pay with UPI App</button>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".pay_with_upi").click(function() {
+                var name = $(".name").val();
+                var num = $(".number").val();
+                var email = $(".email").val();
+
+                // Deep linking URLs for Paytm and PhonePe
+                var paytmLink = "paytm://pay?pn=" + name + "&m=" + num + "&am=1500&cu=INR";
+                var phonepeLink = "phonepe://pay?pn=" + name + "&pa=" + num + "&am=1500&cu=INR";
+
+                // Open both Paytm and PhonePe links
+                window.location.href = paytmLink;
+                setTimeout(function() {
+                    window.location.href = phonepeLink;
+                }, 2000); // Open PhonePe after 2 seconds
+            });
+        });
+    </script>
+</body>
+</html>
